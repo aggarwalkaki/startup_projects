@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STPI Data</title>
+    <link rel="stylesheet" href="newstyles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="nav-container"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Budget</th>
+            </tr>
+        </thead>
+        <tbody id="project-data">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        fetch('http://localhost/startup/fetch_all.php')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data fetched from API:', data);
+
+                // Filter projects with ProjectID equal to '4'
+                const projects = data.projects.filter(proj => proj.ProjectID === '4');
+
+                // Populate the table with filtered projects
+                const tableBody = document.getElementById('project-data');
+                projects.forEach(project => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><a href="project_details.html?projectName=${encodeURIComponent(project.Name_of_Project || '')}">${project.Name_of_Project || ''}</a></td>
+                        <td>${project.Address || ''}</td>
+                        <td>${project.Budget || ''}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+    <script src="include.js"></script>
+</body>
+</html>
+

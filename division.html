@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="newstyles.css">
+    <style>
+      /* Navbar, About Us, and Service Carousel styles from previous example */
+      /* ... */
+  
+      /* Image slider styles */
+      .image-slider {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+      }
+  
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+  
+      .slide.active {
+        opacity: 1;
+      }
+  
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .carousel {
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .carousel-heading {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2em;
+        color: #333;
+    }
+    
+    .carousel-container {
+        position: relative;
+        width: 100%;
+    }
+    
+    .carousel-slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 300%; /* Adjust this to account for the number of slides */
+    }
+    
+    .carousel-slide {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%; /* Adjust the width to match the container's width */
+    }
+    
+    .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 28%; /* Each card occupies slightly less space */
+        max-width: 300px; /* Set a maximum width for each card */
+        text-align: center;
+        margin: 10px;
+        transition: transform 0.3s;
+    }
+    
+    .card:hover {
+        transform: scale(1.05);
+    }
+    
+    .card img {
+        width: 100%;
+        height: 180px; /* Slightly reduce image height */
+        object-fit: cover;
+    }
+    
+    .card-content {
+        padding: 15px; /* Reduce padding */
+    }
+    
+    .card-content h3 {
+        margin: 10px 0; /* Reduce margin */
+        font-size: 1.1em; /* Slightly smaller font size */
+        color: #333;
+    }
+    
+    .card-content p {
+        color: #666;
+        margin-bottom: 15px; /* Reduce margin */
+        font-size: 0.9em; /* Smaller font size */
+    }
+    
+    .learn-more-btn {
+        background-color: #004400;
+        color: #fff;
+        border: none;
+        padding: 8px 15px; /* Reduce button size */
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 0.9em; /* Smaller font size */
+    }
+    
+    .learn-more-btn:hover {
+        background-color: #006600;
+    }
+    
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        border-radius: 50%;
+        font-size: 1.5em;
+        z-index: 10;
+    }
+    
+    .left-arrow {
+        left: 20px;
+    }
+    
+    .right-arrow {
+        right: 20px;
+    }
+    
+    .arrow:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    @media (max-width: 768px) {
+        .card {
+            width: 80%;
+            margin: 10px auto;
+        }
+    
+        .carousel-slide {
+            flex-direction: column;
+        }
+    
+        .left-arrow, .right-arrow {
+            padding: 10px;
+            font-size: 1.2em;
+        }
+    }
+    
+      /* Information boxes */
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About MeitY</a></li>
+            <li><a href="division.html">Divisions</a></li>
+            <li><a href="https://www.meity.gov.in/revenue-trend" target="_blank" >Revenue Trend</a></li>
+            <!-- <li><a href="index.html#rti">RTI</a></li>  -->
+            <li><a href="index.html#notifications">Notifications</a></li>
+            <div class='sign-in-up'>
+                <button type='button' onclick="popup('login-popup')">LOGIN</button>
+                <button type='button' onclick="popup('register-popup')">REGISTER</button>
+              </div>
+            <!-- <li><a href="index.html#section69a">Section 69A of IT Act</a></li>  -->
+        </ul>
+    </nav>
+
+      <div class="image-slider">
+        <div class="slide active">
+          <img src="mygov.jpg" alt="Slide 1">
+        </div>
+        <div class="slide">
+          <img src="IT.jpg" alt="Slide 2">
+        </div>
+        <div class="slide">
+          <img src="IT2.png" alt="Slide 3">
+        </div>
+      </div>
+      <div class="carousel">
+        <h1 class="carousel-heading">Types of Sectors</h1>
+        <div class="carousel-container">
+            <!-- Navigation Arrows -->
+            <button class="arrow left-arrow" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="arrow right-arrow" onclick="moveSlide(1)">&#10095;</button>
+            
+            <!-- Carousel Slides -->
+            <div class="carousel-slides">
+                <!-- Slide 1 -->
+                <div class="carousel-slide">
+                    <div class="card">
+                        <img src="STPI.jpg" alt="Faucet & Leak Repairs">
+                        <div class="card-content">
+                            <h3>STPI</h3>
+                            <p>STPI was established in 1991 by the Indian Ministry of Electronics and Information Technology (MeitY) with the objective of encouraging, promoting and boosting the export of software from India. STPI Headquarters is located in New Delhi with over 60+ Centres spread across the country.</p>
+                            <!-- <button class="learn-more-btn">Learn How We Do ➔</button> -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="COE.webp" alt="Remodeling Service">
+                        <div class="card-content">
+                            <h3>COE</h3>
+                            <p>National Centre of Excellence for Cyber Security Technology Development and Product Entrepreneurship is a joint initiative of the Data Security Council of India (DSCI) and the Ministry of Electronics and Information Technology (MeitY) that works as a multiplier for cybersecurity research, innovation, and product development. </p>
+                            <!-- <button class="learn-more-btn">Learn How We Do ➔</button> -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="NEGD.png" alt="Leak Repairs">
+                        <div class="card-content">
+                            <h3>NeGD</h3>
+                            <p>n 2009, National e-Governance Division was created by the Ministry of Electronics & Information Technology as an Independent Business Division under the Digital India Corporation {erstwhile Media Lab Asia}. Since 2009, NeGD has been playing a pivotal role in supporting MeitY in Programme Management and implementation of the e-Governance Projects</p>
+                            <!-- <button class="learn-more-btn">Learn How We Do ➔</button> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" alt="Advanced Leak Repairs">
+                        <div class="card-content">
+                            <h3>Advanced Leak Repairs</h3>
+                            <p>Using cutting-edge technology, we fix leaks efficiently to ensure a sustainable solution.</p>
+                            <button class="learn-more-btn">Learn More ➔</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" alt="Eco-friendly Solutions">
+                        <div class="card-content">
+                            <h3>Eco-friendly Solutions</h3>
+                            <p>We prioritize eco-friendly solutions to ensure sustainability in every project we undertake.</p>
+                            <button class="learn-more-btn">Learn More ➔</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" alt="Innovative Design">
+                        <div class="card-content">
+                            <h3>Innovative Design</h3>
+                            <p>Our innovative designs not only solve problems but also enhance the aesthetic value.</p>
+                            <button class="learn-more-btn">Learn More ➔</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" alt="Plumbing Solutions">
+                        <div class="card-content">
+                            <h3>Plumbing Solutions</h3>
+                            <p>Our comprehensive plumbing solutions cater to every need with a focus on quality and reliability.</p>
+                            <button class="learn-more-btn">Learn More ➔</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" alt="Emergency Repairs">
+                        <div class="card-content">
+                            <h3>Emergency Repairs</h3>
+                            <p>Available 24/7, our team is ready to tackle emergency repairs with prompt and effective service.</p>
+                            <button class="learn-more-btn">Learn More ➔</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://via.placeholder.com/300x200" alt="Maintenance Services">
+                        <div class="card-content">
+                            <h3>Maintenance Services</h3>
+                            <p>Regular maintenance services to keep your systems running smoothly and prevent future issues.</p>
+                            <button class="learn-more-btn">Learn More ➔</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-container" id="login-popup">
+      <div class="popup">
+        <form method="POST" action="login_register.php">
+          <h2>
+            <span>USER LOGIN</span>
+            <button type="reset" onclick="popup('login-popup')">X</button>
+          </h2>
+          <input type="text" placeholder="E-mail or Username" name="email_username">
+          <input type="password" placeholder="Password" name="password">
+          <button type="submit" class="login-btn" name="login">LOGIN</button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="popup-container" id="register-popup">
+      <div class="register popup">
+        <form method="POST" action="login_register.php">
+          <h2>
+            <span>USER REGISTER</span>
+            <button type="reset" onclick="popup('register-popup')">X</button>
+          </h2>
+          <input type="text" placeholder="Full Name" name="fullname">
+          <input type="text" placeholder="Username" name="username">
+          <input type="email" placeholder="E-mail" name="email">
+          <input type="password" placeholder="Password" name="password">
+          <button type="submit" class="register-btn" name="register">REGISTER</button>
+        </form>
+      </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                });
+            });
+
+         
+
+    </script>
+
+      <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+    
+        function showSlide(n) {
+          slides[currentSlide].classList.remove('active');
+          currentSlide = (n + slides.length) % slides.length;
+          slides[currentSlide].classList.add('active');
+        }
+    
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
+    
+        setInterval(nextSlide, 2000); // Auto-slide every 5 seconds
+    
+        document.querySelectorAll('.slide').forEach((slide, index) => {
+          slide.addEventListener('click', () => {
+            showSlide(index);
+          });
+        });
+    
+      </script>
+      <script src="scripts.js"></script>
+      <script>
+        function popup(popup_name)
+        {
+          get_popup=document.getElementById(popup_name);
+          if(get_popup.style.display=="flex")
+          {
+            get_popup.style.display="none";
+          }
+          else
+          {
+            get_popup.style.display="flex";
+          }
+        }
+      </script>
+</body>
+</html>
+
+

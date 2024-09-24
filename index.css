@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+image-slider {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+/* Slider Styles */
+/*.slider {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    width: 200%;
+    height: 100%;
+    display: flex;
+    transition: 0.5ms ease;
+}
+
+.slide {
+    width: 50%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+input[type="radio"] {
+    display: none;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5ms ease;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background: #fff;
+}
+
+.navigation-arrows {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.navigation-arrows .prev, .navigation-arrows .next {
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.navigation-arrows .prev:hover, .navigation-arrows .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}*/
+
+/* Information Section */
+.info-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.info-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 22%;
+    text-align: center;
+}
+
+.info-box h3 {
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #666;
+}
+
+/* Automatic Navigation */
+/* .navigation-auto {
+    position: absolute;
+    display: flex;
+}
+
+.auto-btn1, .auto-btn2 {
+    display: none;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -50%;
+} */
+

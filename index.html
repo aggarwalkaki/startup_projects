@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <style>
+    /* Navbar, About Us, and Service Carousel styles from previous example */
+    /* ... */
+
+    /* Image slider styles */
+    .image-slider {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Information boxes */
+    .info-section {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    
+    .info-box {
+        background: linear-gradient(to right, #ff8080, #ffa680, #ffc680);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 22%;
+        text-align: center;
+        
+    }
+    
+    .info-box h3 {
+        margin-bottom: 10px;
+    }
+    
+    .info-box p {
+        color:black;
+    }
+
+  .about-us {
+        background: linear-gradient(to bottom, #add8e6, #ffb6c1);
+        padding: 80px 0;
+      }
+      
+      .about-us-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .about-us-image {
+        flex-basis: 30%;
+        text-align: center;
+        opacity: 0;
+        transform: translateX(-50px);
+        animation: slideIn 1s ease-in-out forwards;
+      }
+      
+      @keyframes slideIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      .rounded-image {
+        border-radius: 100%;
+        width: 450px;
+        height: 450px;
+        object-fit: fill;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .about-us-content {
+        flex-basis: 55%;
+      }
+      
+      .about-us-content h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      
+      .about-us-content p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      
+      
+      .btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+      
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      
+
+
+
+
+
+/*.rounded-image {
+  border-radius: 50%;
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border: 5px solid #ffffff; /* Add a border for emphasis 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}*/
+
+.rounded-image:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+      .new-section {
+        padding: 60px 0;
+        background-color: #f8f8f8;
+      }
+      
+      .section-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .section-text {
+        flex-basis: 60%;
+        margin-right: 40px;
+      }
+      
+      .section-text h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      
+      .section-text p {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      
+      .section-image {
+        flex-basis: 40%;
+        text-align: right;
+      }
+      
+      .rounded-image {
+        border-radius: 50%;
+        width: 450px;
+        height: 450px;
+       /* object-fit: cover;*/
+        object-fit: fill;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+  </style>
+  <link rel="stylesheet" href="newstyles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div id="nav-container"></div>
+  
+
+  <div class="image-slider">
+    <div class="slide active">
+      <img src="mygov.jpg" alt="Slide 1">
+    </div>
+    <div class="slide">
+      <img src="samridh.jpg" alt="Slide 2">
+    </div>
+    <div class="slide">
+      <img src="farm.jpg" alt="Slide 3">
+    </div>
+  </div>
+
+  <div class="info-section">
+    <div class="info-box">
+        <h3>startups</h3>
+        <p>Readable content of a when looking at its layout, fact that of this journey to the earth.</p>
+    </div>
+    <div class="info-box">
+        <h3>Schemes</h3>
+        <p>Readable content of a when looking at its layout, fact that of this journey to the earth.</p>
+    </div>
+    <div class="info-box">
+        <h3>challenges</h3>
+        <p>Readable content of a when looking at its layout, fact that of this journey to the earth.</p>
+    </div>
+    <div class="info-box">
+        <h3>Experienced Volunteer</h3>
+        <p>Readable content of a when looking at its layout, fact that of this journey to the earth.</p>
+    </div>
+</div>
+
+
+<section class="about-us">
+  <div class="about-us-container">
+    <div class="about-us-image">
+      <img src="bpo.jpg" alt="About Us" class="rounded-image">
+    </div>
+    <div class="about-us-content">
+      <h2>BPO Promotion scheme</h2>
+      <p>The India BPO Promotion Scheme (IBPS) , envisaged under Digital India Programme, seeks to incentivize establishment of 48,300 seats in respect of BPO/ITES operations across the country.
+        It is distributed among each State in proportion of State's population with an outlay of Rs. 493 Crore. This would help in capacity building in smaller cities in terms of infra & manpower and would become basis for next wave of IT/ITES led growth.</p>
+      <p>This scheme has potential to create employment opportunities of around 1.5 lakh direct jobs considering three shift operations. It may also create good number of indirect jobs.</p>
+      <a href="https://ibps.stpi.in/" class="btn">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="new-section">
+    <div class="section-content">
+      <div class="section-text">
+        <h2>COE For Industry automation</h2>
+        <p>
+            "MOTION", is a Centre of Entrepreneurship (CoE) in Autonomous/ Connected/ Electric / Shared (ACES) Mobility, an initiative of Software Technology Parks of India (STPI), Ministry of Electronics & Information Technology at Pune, with specialized state-of-the-art incubation facility and domain specific physical laboratories for start-ups working in the area of Autonomous Connected Electric Shared Mobility where the highest-standards and best-practices in terms of infrastructure, technology, leadership, mentoring, training, research & development, funding, networking for the given focus area is made available.</p>
+        <p></p>
+            <a href="https://stpi.in/en/centre-of-entrepreneurship/motion" class="btn">Learn More</a>
+      </div>
+      <div class="section-image">
+        <img src="coe.png" alt="Section Image" class="rounded-image">
+      </div>
+    </div>
+  </section>
+
+    <div class="service-carousel">
+      <!-- Your "Service Carousel" section content goes here -->
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    setInterval(nextSlide, 2000); // Auto-slide every 5 seconds
+
+    document.querySelectorAll('.slide').forEach((slide, index) => {
+      slide.addEventListener('click', () => {
+        showSlide(index);
+      });
+    });
+
+  // JavaScript
+window.addEventListener('scroll', function() {
+    var aboutUsSection = document.querySelector('.about-us');
+    var aboutUsImage = document.querySelector('.about-us-image');
+  
+    if (isElementInViewport(aboutUsSection)) {
+      aboutUsImage.classList.add('animate');
+    } else {
+      aboutUsImage.classList.remove('animate');
+    }
+  });
+  
+  function isElementInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  </script>
+  
+  <script src="include.js"></script>
+</body>
+
